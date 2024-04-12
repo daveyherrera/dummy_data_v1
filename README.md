@@ -102,7 +102,7 @@ like this
 ```json
 {
 "id": 182,
-"values" {
+"values": {
    "key":"ACTUAL ENDPOINT EXPECTED PAYLOAD"
    }
 }
