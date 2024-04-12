@@ -99,26 +99,26 @@ All data must be wrapped with two keys:
 
 like this
 
-´´´´json
+```json
 {
 "id": 182,
 "values" {
 "ACTUAL ENDPOINT EXPECTED PAYLOAD"
 }
 }
-´´´´
+```
 
 #### Custom .py file
 
 After the custom json file has been created, one of the first things that need to be created on the object are the endpoint summary name.
 Then you need to create the metadata and should have the following information:
-´´´json
+```json
 {
 'type': 'could be term, could be content, etc',
 'location' self.curr_path + "/actual file name"
 'fields_to_update': ['dataSourceId', 'other_value']
 }
-´´´
+```
 We need then to call self.dsk = return_dsk() to retrieve the dsk IF REQUIRED!
 and a general dummy_data variable empty list.
 
@@ -130,3 +130,6 @@ Then we:
 2. Create the custom values
 3. Post the data
 4. Wrap the logic on a main function.
+
+### More documentation
+<iframe width="768" height="432" src="https://miro.com/app/live-embed/uXjVNqwycJs=/?moveToViewport=-1364,463,4954,1134&embedId=976113886942" frameborder="0" scrolling="no" allow="fullscreen; clipboard-read; clipboard-write" allowfullscreen></iframe>
