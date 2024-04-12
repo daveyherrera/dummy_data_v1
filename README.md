@@ -132,4 +132,4 @@ Then we:
 4. Wrap the logic on a main function.
 
 ### More documentation
-<iframe width="768" height="432" src="https://miro.com/app/live-embed/uXjVNqwycJs=/?moveToViewport=-1364,463,4954,1134&embedId=976113886942" frameborder="0" scrolling="no" allow="fullscreen; clipboard-read; clipboard-write" allowfullscreen></iframe>
+https://miro.com/app/board/uXjVNqwycJs=/?share_link_id=495599097475
