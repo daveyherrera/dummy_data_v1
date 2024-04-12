@@ -103,8 +103,8 @@ like this
 {
 "id": 182,
 "values" {
-"ACTUAL ENDPOINT EXPECTED PAYLOAD"
-}
+   "ACTUAL ENDPOINT EXPECTED PAYLOAD"
+   }
 }
 ```
 
@@ -114,9 +114,9 @@ After the custom json file has been created, one of the first things that need t
 Then you need to create the metadata and should have the following information:
 ```json
 {
-'type': 'could be term, could be content, etc',
-'location': self.curr_path + "/actual file name",
-'fields_to_update': ['dataSourceId', 'other_value']
+"type": "could be term, could be content etc",
+"location": "self.curr_path + actual file name",
+"fields_to_update": "['dataSourceId', 'other_value']"
 }
 ```
 We need then to call self.dsk = return_dsk() to retrieve the dsk IF REQUIRED!
