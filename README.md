@@ -115,7 +115,7 @@ Then you need to create the metadata and should have the following information:
 ```json
 {
 'type': 'could be term, could be content, etc',
-'location' self.curr_path + "/actual file name",
+'location': self.curr_path + "/actual file name",
 'fields_to_update': ['dataSourceId', 'other_value']
 }
 ```
