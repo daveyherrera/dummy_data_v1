@@ -1,4 +1,4 @@
-# Dummy data First and kinda wrong iteration
+# Dummy data
 
 ## What is it?
 

@@ -13,10 +13,10 @@ class SwaggerReader(swagger_creator.LearnJsonApiGenerator):
         return "Swagger reader class for the learn api explorer"
     
     def obtain_method_and_url(self, summary_str):
-        swagger_json = self.read_file_return_json(self.path_swagger_json)
-        summary = summary_str
-        print(f"Returning method and path for: '{summary}'")
-        return swagger_json[summary]
+        print(f"Returning method and path for: '{summary_str}'")
+        self.swagger_generator_main()
+        path_swagger = self.read_file_return_json(self.path_swagger_json)
+        return path_swagger[summary_str]
 
 
 # read_swagger_json will receive the summary name and return the method and path for the call
@@ -24,4 +24,4 @@ class SwaggerReader(swagger_creator.LearnJsonApiGenerator):
 
 if __name__ == "__main__":
     swagger_reader = SwaggerReader()
-    print(swagger_reader.obtain_method_and_url("Create Group Predicate"))
+    print(swagger_reader.obtain_method_and_url("Create Course"))

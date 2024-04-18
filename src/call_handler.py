@@ -83,17 +83,19 @@ class Caller(data_handler.DummyDataGenerator):
         method_and_url = self.obtain_method_and_url(method_summary)
         print(method_and_url)
         print(arguments)
+                
+        if type_of_dummy_data == "dsk":
+            call_url = self.build_url_with_arguments(method_and_url["endpoint"], arguments)
+            request = self.request(call_url, method_and_url["method"], payload=self.dsk_payload)
+            return request
 
-        if self.validate_arguments(method_and_url["path"], arguments):
-            call_url = self.build_url_with_arguments(method_and_url["path"], arguments)
+        if self.validate_arguments(method_and_url["endpoint"], arguments):
+            call_url = self.build_url_with_arguments(method_and_url["endpoint"], arguments)
             print(self.expected_arguments)
         else:
             print("Arguments are not correct")
             return False
-        
-        if type_of_dummy_data == "dsk":
-            request = self.request(call_url, method_and_url["method"], payload=self.dsk_payload)
-            return request
+
 
         succesfully_created_data = []
         failed_data = []

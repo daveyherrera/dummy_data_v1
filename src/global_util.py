@@ -10,10 +10,10 @@ class Utilities():
         self.now = datetime.now()
         self.today = date.today()
         self.time = self.now.strftime('%Y-%m-%d %H:%M:%S')
-        self.curr_path = os.path.dirname(os.path.abspath(__file__))
-        self.config_location = self.curr_path + "/config.json"
-        self.dummy_data_stored = self.curr_path + "/dummy_data_stored.json"
-        self.dummy_dsk_location = self.curr_path + "/dummy_dsk.json"
+        self.curr_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+        self.config_location = self.curr_path + "/config/config.json"
+        self.dummy_data_stored = self.curr_path + "/database/dummy_data_stored.json"
+        self.dummy_dsk_location = self.curr_path + "/database/dummy_dsk.json"
         self.id_pattern = r'^_[0-9]+_1$'
         self.application_key = self.read_file_return_json(self.config_location)["application_key"]
         self.secret = self.read_file_return_json(self.config_location)["secret"]
@@ -26,6 +26,7 @@ class Utilities():
     def file_exists(self, file_name):
         try:
             if os.path.isfile(file_name):
+                print(os.path.isfile(file_name))
                 return True
         except FileNotFoundError:
             return False
@@ -83,4 +84,4 @@ class Utilities():
 
 if __name__ == "__main__":
     util = Utilities()
-    print(util.today)
+    print(util.curr_path)

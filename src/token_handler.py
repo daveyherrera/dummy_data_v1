@@ -11,11 +11,11 @@ class Token(swagger_reader.SwaggerReader, util.Utilities):
         super().__init__()
         self.token_file_name = "token.json"
         self.token_method_and_url = self.obtain_method_and_url("Request Token")
-        self.token_endpoint_path = self.token_method_and_url["path"]
+        self.token_endpoint_path = self.token_method_and_url["endpoint"]
         self.token_endpoint_method = self.token_method_and_url['method']
         # This empty dictionary receives the token payload
         self.token_payload = {}
-        self.token_file_location = self.curr_path + "/" + self.token_file_name
+        self.token_file_location = self.curr_path + "/database/" + self.token_file_name
         
 
     # If the token exists, validate it, if not, generate a new one

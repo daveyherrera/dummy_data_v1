@@ -8,7 +8,7 @@ class DummyCoursesHandler(dsk_handler.DSK):
         self.course_view_types = ['Classic', 'Ultra', 'Undecided', 'UltraPreview']
         self.course_handler_metadata = {
                 'type': 'courses',
-                'location': self.curr_path + "/dummy_courses.json",
+                'location': self.curr_path + "/database/dummy_courses.json",
                 'fields_to_update':['dataSourceId','ultraStatus']
         }
         self.dsk = self.return_dsk()

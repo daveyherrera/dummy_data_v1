@@ -55,20 +55,18 @@ class DummyDataGenerator(token.Token):
 
     def first_time(self):
         # This function will be used to create the first time the data is deployed to the server
-        if self.has_dummy_data_been_deployed():
-            return "Data has been deployed already"
-        else:
-            first_time_dummy_data = {
-                    self.learn_instance: {
-                        "dsk": "",
-                        "users": [],
-                        "courses": [],
-                        "memberships_course_user": []
-                    }
+        first_time_dummy_data = {
+                self.learn_instance: {
+                    "dsk": "",
+                    "users": [],
+                    "courses": [],
+                    "memberships_course_user": []
                 }
-            self.dummy_data_deployed.append(first_time_dummy_data)
-            self.write_file_json(self.dummy_data_stored, self.dummy_data_deployed)
-            return "first time data deployed to the server."
+            }
+        self.dummy_data_deployed.append(first_time_dummy_data)
+        self.write_file_json(self.dummy_data_stored, self.dummy_data_deployed)
+        print("first time data deployed to the server.")
+        return True
 
     # Assign a value to a key in the dummy data and extends the list
     def assign_value_to_key_in_dummy(self, dummy_data ,key:str, value):
@@ -95,7 +93,7 @@ class DummyDataGenerator(token.Token):
             return False
         
         # Check if the dummy data has ever been deployed
-        if self.find_instance() is False:
+        if self.find_instance() in [None, False, ""]:
             self.first_time()
 
         # Validate the url exists first

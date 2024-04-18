@@ -18,9 +18,11 @@ class DSK(call_handler.Caller):
     # 1. Read first the dummy_data_stored.json file to see if any dsk has been created.
     def does_dsk_exists_on_dummy_data_stored(self):
         print("Checking if the dsk exists on the dummy_data_stored.json file")
-        if self.dsk_stored_on_instance['dsk'] in [None, False, ""]:
-            return False
+        if self.dsk_stored_on_instance in [None, False, ""] or self.dsk_stored_on_instance['dsk'] in [None, False, ""]:
+                print("There is no dsk stored on the internal db")
+                return False
         else:
+            print("there is a dks stored on the internal db")
             self.dsk_id = self.dsk_stored_on_instance['dsk']
             return True
         
@@ -39,6 +41,8 @@ class DSK(call_handler.Caller):
         print("Getting the dsks available in Learn and verifying if one exists for Dummy data")
         # Getting the dataSources
         get_dsk_call = json.loads(self.caller_main("Get Data Sources",type_of_dummy_data="dsk", requested_data=1))
+        # hard coded 1 for only one dsk
+        print(get_dsk_call)
         for dsk in get_dsk_call['result']['results']:
             if dsk.get('externalId') == "dummy_data":
                 self.dsk_id = dsk.get('id')

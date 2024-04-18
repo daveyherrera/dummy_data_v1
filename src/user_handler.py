@@ -7,7 +7,7 @@ class DummyUsersHandler(dsk_handler.DSK):
         self.create_users_endpoint_summary = "Create User"
         self.user_handler_metadata = {
                 'type': 'users',
-                'location': self.curr_path + "/dummy_users.json",
+                'location': self.curr_path + "/database/dummy_users.json",
                 'fields_to_update': ['dataSourceId', 'password']
         }
         self.dsk = self.return_dsk()
@@ -61,4 +61,4 @@ class DummyUsersHandler(dsk_handler.DSK):
 
 if __name__ == "__main__":
     new_dummy_users = DummyUsersHandler()
-    print(new_dummy_users.create_dummy_users_main(1, "one_for_all"))
+    print(new_dummy_users.create_dummy_users_main(2, "one_for_all"))
